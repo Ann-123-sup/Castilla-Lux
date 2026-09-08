@@ -1,0 +1,767 @@
+<```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Castilla Lux | Pulseras Turísticas</title>
+
+    <style>
+
+        /* =========================================
+           ESTILOS GENERALES
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #f4f1eb;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* =========================================
+           ENCABEZADO
+        ========================================= */
+
+        header {
+            background: linear-gradient(135deg, #111111, #292929);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+            border-bottom: 4px solid #c9a227;
+        }
+
+        .logo {
+            font-family: Georgia, serif;
+            font-size: 42px;
+            letter-spacing: 4px;
+            color: #d8b449;
+            margin-bottom: 8px;
+        }
+
+        .subtitulo {
+            font-size: 16px;
+            color: #e8e8e8;
+            letter-spacing: 1px;
+        }
+
+        /* =========================================
+           CONTENEDOR PRINCIPAL
+        ========================================= */
+
+        .contenedor {
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        /* =========================================
+           PRESENTACIÓN
+        ========================================= */
+
+        .presentacion {
+            background-color: white;
+            padding: 30px;
+            border-radius: 14px;
+            margin-bottom: 35px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .presentacion h2 {
+            font-family: Georgia, serif;
+            font-size: 28px;
+            color: #222;
+            margin-bottom: 12px;
+        }
+
+        .presentacion p {
+            max-width: 750px;
+            margin: auto;
+            color: #666;
+        }
+
+        /* =========================================
+           INFORMACIÓN DE PRECIOS
+        ========================================= */
+
+        .precios {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .precio {
+            min-width: 200px;
+            padding: 18px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fafafa;
+        }
+
+        .precio h3 {
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #777;
+        }
+
+        .precio span {
+            display: block;
+            font-size: 25px;
+            font-weight: bold;
+            color: #b28a16;
+            margin-top: 5px;
+        }
+
+        /* =========================================
+           TÍTULO DE PRODUCTOS
+        ========================================= */
+
+        .titulo-seccion {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .titulo-seccion h2 {
+            font-family: Georgia, serif;
+            font-size: 30px;
+        }
+
+        .linea {
+            width: 70px;
+            height: 3px;
+            background-color: #c9a227;
+            margin: 10px auto;
+        }
+
+        /* =========================================
+           TARJETAS DE DIJES
+        ========================================= */
+
+        .productos {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .producto {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+            transition: 0.3s ease;
+        }
+
+        .producto:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        /* =========================================
+           IMÁGENES
+        ========================================= */
+
+        .imagen {
+            height: 190px;
+            background-color: #000000;
+            overflow: hidden;
+        }
+
+        .imagen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* =========================================
+           INFORMACIÓN DEL PRODUCTO
+        ========================================= */
+
+        .info {
+            padding: 18px;
+            text-align: center;
+        }
+
+        .info h3 {
+            font-family: Georgia, serif;
+            font-size: 19px;
+            margin-bottom: 7px;
+        }
+
+        .info p {
+            font-size: 13px;
+            color: #777;
+            min-height: 42px;
+        }
+
+        .precio-dije {
+            display: block;
+            color: #b28a16;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        /* =========================================
+           CALCULADORA
+        ========================================= */
+
+        .calculadora {
+            background-color: #171717;
+            color: white;
+            margin-top: 45px;
+            padding: 35px;
+            border-radius: 14px;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.15);
+        }
+
+        .calculadora h2 {
+            text-align: center;
+            font-family: Georgia, serif;
+            color: #d8b449;
+            margin-bottom: 25px;
+        }
+
+        .formulario {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .campo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .campo label {
+            margin-bottom: 7px;
+            color: #ddd;
+            font-size: 14px;
+        }
+
+        .campo select,
+        .campo input {
+            padding: 12px;
+            border: none;
+            border-radius: 7px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .resultado {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+
+        .resultado p {
+            color: #ccc;
+        }
+
+        .total {
+            font-size: 32px;
+            font-weight: bold;
+            color: #d8b449;
+            margin-top: 5px;
+        }
+
+        /* =========================================
+           PIE DE PÁGINA
+        ========================================= */
+
+        footer {
+            background-color: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+
+        footer strong {
+            color: #d8b449;
+        }
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 900px) {
+
+            .productos {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .logo {
+                font-size: 32px;
+            }
+
+            .productos {
+                grid-template-columns: 1fr;
+            }
+
+            .formulario {
+                grid-template-columns: 1fr;
+            }
+
+            .presentacion {
+                padding: 22px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================
+         ENCABEZADO
+    ========================================== -->
+
+    <header>
+
+        <div class="logo">
+            CASTILLA LUX
+        </div>
+
+        <div class="subtitulo">
+            Pulseras que llevan contigo la esencia de Castilla
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         CONTENIDO PRINCIPAL
+    ========================================== -->
+
+    <main class="contenedor">
+
+
+        <!-- PRESENTACIÓN -->
+
+        <section class="presentacion">
+
+            <h2>Descubre Castilla en un detalle</h2>
+
+            <p>
+                Castilla Lux es un emprendimiento dedicado a la creación
+                de pulseras con dijes inspirados en los lugares turísticos
+                de Castilla. Cada dije representa un lugar especial y
+                permite llevar un pequeño recuerdo de nuestra tierra.
+            </p>
+
+
+            <div class="precios">
+
+                <div class="precio">
+
+                    <h3>Pulsera base</h3>
+
+                    <span>S/ 5.00</span>
+
+                </div>
+
+
+                <div class="precio">
+
+                    <h3>Cada dije</h3>
+
+                    <span>S/ 15.00</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             SECCIÓN DE DIJES
+        ====================================== -->
+
+        <section>
+
+            <div class="titulo-seccion">
+
+                <h2>Nuestros Dijes</h2>
+
+                <div class="linea"></div>
+
+                <p>
+                    8 lugares turísticos de Castilla representados
+                    en nuestros dijes.
+                </p>
+
+            </div>
+
+
+            <div class="productos">
+
+
+                <!-- DIJE 1 -->
+
+                <article class="producto">
+
+                    <div class="imagen">
+                        <img src="E:/imagenes/1.jpeg" alt="Dije 01">
+                    </div>
+
+                    <div class="info">
+
+                        <h3>Dije 01</h3>
+
+                        <p>
+                            Lugar turístico de Castilla.
+                        </p>
+
+                        <span class="precio-dije">
+                            S/ 15.00
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- DIJE 2 -->
+
+                <article class="producto">
+
+                    <div class="imagen">
+                        <img src="E:/imagenes/2.jpeg" alt="Dije 02">
+                    </div>
+
+                    <div class="info">
+
+                        <h3>Dije 02</h3>
+
+                        <p>
+                            Lugar turístico de Castilla.
+                        </p>
+
+                        <span class="precio-dije">
+                            S/ 15.00
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- DIJE 3 -->
+
+                <article class="producto">
+
+                    <div class="imagen">
+                        <img src="E:/imagenes/3.jpeg" alt="Dije 03">
+                    </div>
+
+                    <div class="info">
+
+                        <h3>Dije 03</h3>
+
+                        <p>
+                            Lugar turístico de Castilla.
+                        </p>
+
+                        <span class="precio-dije">
+                            S/ 15.00
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- DIJE 4 -->
+
+                <article class="producto">
+
+                    <div class="imagen">
+                        <img src="E:/imagenes/4.jpeg" alt="Dije 04">
+                    </div>
+
+                    <div class="info">
+
+                        <h3>Dije 04</h3>
+
+                        <p>
+                            Lugar turístico de Castilla.
+                        </p>
+
+                        <span class="precio-dije">
+                            S/ 15.00
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- DIJE 5 -->
+
+                <article class="producto">
+
+                    <div class="imagen">
+                        <img src="E:/imagenes/5.jpeg" alt="Dije 05">
+                    </div>
+
+                    <div class="info">
+
+                        <h3>Dije 05</h3>
+
+                        <p>
+                            Lugar turístico de Castilla.
+                        </p>
+
+                        <span class="precio-dije">
+                            S/ 15.00
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- DIJE 6 -->
+
+                <article class="producto">
+
+                    <div class="imagen">
+                        <img src="E:/imagenes/6.jpeg" alt="Dije 06">
+                    </div>
+
+                    <div class="info">
+
+                        <h3>Dije 06</h3>
+
+                        <p>
+                            Lugar turístico de Castilla.
+                        </p>
+
+                        <span class="precio-dije">
+                            S/ 15.00
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- DIJE 7 -->
+
+                <article class="producto">
+
+                    <div class="imagen">
+                        <img src="E:/imagenes/7.jpeg" alt="Dije 07">
+                    </div>
+
+                    <div class="info">
+
+                        <h3>Dije 07</h3>
+
+                        <p>
+                            Lugar turístico de Castilla.
+                        </p>
+
+                        <span class="precio-dije">
+                            S/ 15.00
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- DIJE 8 -->
+
+                <article class="producto">
+
+                    <div class="imagen">
+                        <img src="E:/imagenes/8.jpeg" alt="Dije 08">
+                    </div>
+
+                    <div class="info">
+
+                        <h3>Dije 08</h3>
+
+                        <p>
+                            Lugar turístico de Castilla.
+                        </p>
+
+                        <span class="precio-dije">
+                            S/ 15.00
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             CALCULADORA DE PRECIO
+        ====================================== -->
+
+        <section class="calculadora">
+
+            <h2>Calcula tu pulsera</h2>
+
+
+            <div class="formulario">
+
+
+                <div class="campo">
+
+                    <label for="cantidadPulseras">
+                        Cantidad de pulseras base
+                    </label>
+
+                    <input
+                        type="number"
+                        id="cantidadPulseras"
+                        min="1"
+                        value="1"
+                        oninput="calcularTotal()"
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="cantidadDijes">
+                        Cantidad de dijes
+                    </label>
+
+                    <input
+                        type="number"
+                        id="cantidadDijes"
+                        min="0"
+                        value="1"
+                        oninput="calcularTotal()"
+                    >
+
+                </div>
+
+
+            </div>
+
+
+            <div class="resultado">
+
+                <p>
+                    Precio total:
+                </p>
+
+                <div class="total" id="total">
+                    S/ 20.00
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         PIE DE PÁGINA
+    ========================================== -->
+
+    <footer>
+
+        <p>
+            <strong>Castilla Lux</strong>
+        </p>
+
+        <p>
+            Un recuerdo de Castilla que puedes llevar contigo.
+        </p>
+
+        <p>
+            © 2026 Castilla Lux - Todos los derechos reservados.
+        </p>
+
+    </footer>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script>
+
+        function calcularTotal() {
+
+            // Precio de cada pulsera base
+            const precioPulsera = 5;
+
+            // Precio de cada dije
+            const precioDije = 15;
+
+
+            // Obtener cantidades
+            let cantidadPulseras =
+                parseInt(
+                    document.getElementById("cantidadPulseras").value
+                );
+
+            let cantidadDijes =
+                parseInt(
+                    document.getElementById("cantidadDijes").value
+                );
+
+
+            // Evitar valores negativos o vacíos
+            if (isNaN(cantidadPulseras) || cantidadPulseras < 1) {
+                cantidadPulseras = 1;
+            }
+
+            if (isNaN(cantidadDijes) || cantidadDijes < 0) {
+                cantidadDijes = 0;
+            }
+
+
+            // Calcular precio
+            const total =
+                (cantidadPulseras * precioPulsera) +
+                (cantidadDijes * precioDije);
+
+
+            // Mostrar resultado
+            document.getElementById("total").textContent =
+                "S/ " + total.toFixed(2);
+
+        }
+
+    </script>
+
+</body>
+</html>
+```
+
+
